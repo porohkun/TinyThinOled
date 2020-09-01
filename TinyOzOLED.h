@@ -1,9 +1,9 @@
 /*
   TinyOzOLED.h - 0.96' I2C 128x64 OLED Driver Library
   2014 Copyright (c) OscarLiang.net  All right reserved.
- 
+
   Author: Oscar Liang
-  
+
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
   License as published by the Free Software Foundation; either
@@ -13,7 +13,7 @@
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
   Lesser General Public License for more details.
-  
+
   Uses TinyWireM instead of Wire llibrary. For Attiny processors
   Change done by Andreas Spiess, sensorsiot@gmail.com
 
@@ -75,20 +75,22 @@ public:
 
 	void sendCommand(byte command);
 	void sendData(byte Data);
+	void sendData(byte data, byte count);
+	void sendData(byte* data, byte start, byte length);
 
-	void printChar(char c, byte X=255, byte Y=255);
-	void printString(const char *String, byte X=255, byte Y=255, byte numChar=255);
-	byte printNumber(long n, byte X=255, byte Y=255);
-	byte printNumber(float float_num, byte prec=6, byte Y=255, byte numChar=255);
-	void printBigNumber(const char *number, byte column=0, byte page=0, byte numChar=255); 
-	void drawBitmap(const byte *bitmaparray, byte X, byte Y, byte width, byte height);
+	void printChar(char c, byte X = 255, byte Y = 255);
+	void printString(const char* String, byte X = 255, byte Y = 255, byte numChar = 255);
+	byte printNumber(long n, byte X = 255, byte Y = 255);
+	byte printNumber(float float_num, byte prec = 6, byte Y = 255, byte numChar = 255);
+	void printBigNumber(const char* number, byte column = 0, byte page = 0, byte numChar = 255);
+	void drawBitmap(const byte* bitmaparray, byte X, byte Y, byte width, byte height);
 
 	void init();
-	
+
 	void setCursorXY(byte Column, byte Row);
 	void clearDisplay();
 	//void clearPage(byte page);
-	
+
 	void setNormalDisplay();
 	void setInverseDisplay();
 	void setPowerOff();
@@ -96,7 +98,7 @@ public:
 	void setPageMode();
 	void setHorizontalMode();
 	void setBrightness(byte Brightness);
-	
+
 	void scrollRight(byte start, byte end, byte speed);
 	void scrollLeft(byte start, byte end, byte speed);
 	void scrollDiagRight();
