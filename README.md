@@ -1,4 +1,2 @@
-# TinyOzOled
-OzOLED library using TinyWireM library for Attiny processors
-
-This Library is  used in Battery Tester project ( https://youtu.be/mKPKQm0uPBQ )
+# TinyThinOled
+This is a fork of [TinyOzOLED library by Sensorslot](https://github.com/SensorsIot/TinyOzOled) but with packet page writing and without other stuff.
