@@ -22,7 +22,7 @@
 
 
 
-#include "TinyOzOLED.h"
+#include "TinyThinOLED.h"
 #include <TinyWireM.h>
 #include <avr/pgmspace.h>
 
